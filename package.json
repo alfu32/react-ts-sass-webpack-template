@@ -1,0 +1,49 @@
+{
+  "name": "react-ts-sass-webpack-template",
+  "version": "1.0.0",
+  "description": "Project WebPack/Babel template to bundle resources in hot-loader for React Typescript and Stylesheets (css, scss, sass)",
+  "main": "index.js",
+  "scripts": {
+    "build": "export NODE_ENV=development|| set NODE_ENV=development&& webpack --progress --colors",
+    "build-prd": "export NODE_ENV=production|| set NODE_ENV=production&& webpack --progress --colors",
+    "start": "export NODE_ENV=development|| set NODE_ENV=development&& webpack-dev-server --hot --inline --progress --colors --open-page wwwroot/",
+    "start-prd": "export NODE_ENV=production|| set NODE_ENV=production&& webpack --progress --colors&& start http://localhost:3001&& node node_modules/http-server/bin/http-server ./wwwroot.prd/ -p 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhptr/react-ts-sass-webpack-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhptr/react-ts-sass-webpack-template/issues"
+  },
+  "homepage": "https://github.com/thanhptr/react-ts-sass-webpack-template#readme",
+  "devDependencies": {
+    "@types/node": "^6.0.81",
+    "@types/react": "^15.0.37",
+    "@types/react-dom": "^15.5.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "http-server": "^0.10.0",
+    "node-sass": "^4.5.3",
+    "react-hot-loader": "^1.3.1",
+    "sass-loader": "^6.0.6",
+    "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^2.2.2",
+    "typescript": "^2.4.1",
+    "typings-for-css-modules-loader": "^1.5.0",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}

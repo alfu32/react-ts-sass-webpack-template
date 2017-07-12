@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'AdobeBlank-2049-scss';
+	src: url('../fonts/AdobeBlank.eot');
+	src: url('../fonts/AdobeBlank.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/AdobeBlank.woff') format('woff'),
+		 url('../fonts/AdobeBlank.ttf') format('truetype'),
+		 url('../fonts/AdobeBlank.svg#AdobeBlank') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font-stack:    'AdobeBlank-2049-scss', Fallback, sans-serif;
+$primary-color: #333;
+
+
+table.hl {
+	background-image: url("../images/1x1.png");
+  font: 100% $font-stack;
+  color: $primary-color;
+  margin: 2em 0;
+  td.ln {
+    text-align: right;
+  }
+}
+
+li.test-scss-list {
+  font: {
+    family: serif;
+    weight: bold;
+    size: 1.3em;
+  }
+}

@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'AdobeBlank-2049-css';
+	src: url('../fonts/AdobeBlank.eot');
+	src: url('../fonts/AdobeBlank.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/AdobeBlank.woff') format('woff'),
+		 url('../fonts/AdobeBlank.ttf') format('truetype'),
+		 url('../fonts/AdobeBlank.svg#AdobeBlank') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#test-css-data th {
+	background-image: url("../images/1x1.png");
+  font-family: 'AdobeBlank-2049-css', Fallback, sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+#test-css-data td, #test-css-data th {
+  padding: 2px;
+}
+.TestCssFont {
+	font-family: 'AdobeBlank-2049-css', Fallback, sans-serif;
+}
+.TestCssStyle {
+	font-size: x-large;
+	font-weight: bold;
+}
