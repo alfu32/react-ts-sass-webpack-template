@@ -33,7 +33,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    loader: [
+                    use: [
                         {
                             loader: 'typings-for-css-modules-loader',
                             query: {
