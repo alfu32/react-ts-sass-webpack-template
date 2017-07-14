@@ -1,42 +1,38 @@
-Project WebPack/Babel template to bundle resources in hot-loader for React Typescript and Stylesheets (css, scss, sass)
+WebPack/Babel template to bundle resources in hot-loader for React Typescript and Stylesheets (css, scss, sass)
 
-# Tips
-## Speed up npm install on Windows
-To speed up super-slow **npm install** command on Windows, please using powershell by default (not standard Windows cmd interface).
-In **VSCode** choose from main menu **File** - **Preferences** - **Settings** (<kbd>control</kbd> + <kbd>,</kbd>) then add or update the following setting into the **settings.json**
-```json
-"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-```
-## Change npm registry from https to https
-```bash
-npm config set registry http://registry.npmjs.org/ --global
-```
-# Using the template
+# 1. Using the template
 ## Initialize
-Close the repository from github then run the command
+Clone the repository from github then run the command
 ```bash
 npm install
 ```
-## Commands (package.json)
+## Supported Commands (defined in package.json)
 ```bash
-# Build development only
+# Build development only (output to /wwwroot)
 npm run build
-# Build production release
+
+# Build production release (output to /wwwroot.prd)
+# All distribution files are in wwwroot.prd
+# These files can be hosted in a public HTTP server (nginx, apache, IIS,..)
 npm run build-prd
-# Run development server (hot update)
+
+# Run development server with hot-loader (running in background)
 npm start
-# Build production & run http-server
+
+# Build production & run node http-server
+# in background to test the release build
 npm run start-prd
 ```
 ## Import Stylesheets in ts/tsx
 ```javascript
+// Sample source for script file /script/components/*.tsx
 import { IAppCss as appcss } from '../../styles/app.css';
 const styles: appcss = require('../../styles/app.css');
 ...
 return <h1 className={styles.TestCssFont}>Hello... world</h1>;
 ```
 
-# Create the template
+# 2. Create the template
 ```bash
 # Init package json
 npm init -y
@@ -126,7 +122,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    loader: [
+                    use: [
                         {
                             loader: 'typings-for-css-modules-loader',
                             query: {
@@ -174,4 +170,15 @@ module.exports = {
         ]
     }    
 }
+```
+# 3. Tips
+## Speed up npm install on Windows
+To speed up super-slow **npm install** command on Windows, please using powershell by default (not standard Windows cmd interface).
+In **VSCode** choose from main menu **File** - **Preferences** - **Settings** (<kbd>control</kbd> + <kbd>,</kbd>) then add or update the following setting into the **settings.json**
+```json
+"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+```
+## Change npm registry from https to https
+```bash
+npm config set registry http://registry.npmjs.org/ --global
 ```
