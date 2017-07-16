@@ -23,7 +23,7 @@ npm start
 # in background to test the release build
 npm run start-prd
 ```
-## Import Stylesheets in ts/tsx
+## Howto import Stylesheets in ts/tsx
 ```javascript
 // Sample source for script file /script/components/*.tsx
 import { IAppCss as appcss } from '../../styles/app.css';
